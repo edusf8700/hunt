@@ -4,7 +4,7 @@ import Main from './pages/main';
 import './config/StatusBarConfig';
 
 export default createStackNavigator({
-    Main
+    Main,
 },{
     navigationOptions: {
         headerStyle: {
@@ -12,4 +12,4 @@ export default createStackNavigator({
         },
         headerTintColor: '#fff'
     }
-});
+}); 
