@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import api from '../services/api';
 
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { bold } from 'ansi-colors';
 
 
 export default class Main extends Component {
@@ -47,12 +46,17 @@ export default class Main extends Component {
         <View style = {styles.productContainer}>
             <Text style = {styles.productTitle}>{item.title}</Text>
             <Text style = {styles.productDescription}>{item.description}</Text>
-            <TouchableOpacity style = {styles.productButton} onPress = {() => {}}>
+            <TouchableOpacity 
+                style = {styles.productButton}
+                onPress = {() => {
+                    this.props.navigation.navigate('Product', { product : item });
+                }}
+            >
                 <Text style = {styles.productButtonText}>Acessar</Text>
             </TouchableOpacity>
 
         </View>
-    )
+    );
 
 
     render() {
